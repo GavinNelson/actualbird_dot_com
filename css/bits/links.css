@@ -1,0 +1,161 @@
+@-webkit-keyframes spin {
+  0% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes dash {
+  from {
+    stroke-dashoffset: 20;
+  }
+  to {
+    stroke-dashoffset: -20;
+  }
+}
+@-webkit-keyframes dash {
+  from {
+    stroke-dashoffset: 20;
+  }
+  to {
+    stroke-dashoffset: -20;
+  }
+}
+#links {
+  background-image: url('../img/backgrounds/linksBG2.gif');
+  background-size: cover;
+  background-color: #000;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+#links h1 {
+  visibility: hidden;
+}
+#links svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -5;
+  background-size: cover;
+  /*        animation: @animation-slow;
+        -webkit-animation: @animation-slow;*/
+  /*        transform-origin: 50%;*/
+}
+.front#links svg {
+  opacity: 0.5;
+  filter: grayscale(100%);
+  /*            -webkit-filter: grayscale(100%);*/
+  transition: all 1s ease-out;
+}
+.front#links svg path {
+  /*                fill: rgba(0,0,0,0.5);*/
+}
+.front#links svg #twirlme,
+.front#links svg #twirlmebackwards {
+  display: block;
+}
+#links svg #twirlme,
+#links svg #twirlmebackwards {
+  display: none;
+  animation: spin 4s infinite linear both;
+  -webkit-animation: spin 4s infinite linear both;
+  transform-origin: 50%;
+  animation-play-state: paused;
+  -webkit-animation-play-state: paused;
+}
+#links path {
+  animation: dash 2s linear infinite reverse;
+  -webkit-animation: dash 2s linear infinite reverse;
+  animation-fill-mode: both;
+  -webkit-animation-fill-mode: both;
+  stroke-dasharray: 20;
+  stroke-linecap: round;
+}
+#links:hover #twirlme,
+#links:hover #twirlmebackwards {
+  animation-play-state: running;
+  -webkit-animation-play-state: running;
+}
+#links ul {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  height: auto;
+}
+#links ul li:last-child:before {
+  transition: opacity 0.5s linear;
+  content: '';
+  background-color: #000;
+  background-image: url(../img/backgrounds/linksBG.png);
+  background-size: cover;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  pointer-events: none;
+  animation: spin 4s infinite linear both;
+}
+#links ul li:hover ~ li:last-child:before,
+#links ul li:last-child:hover:before {
+  opacity: 0.5;
+  animation-play-state: running;
+}
+#links ul li:hover:nth-child(odd) ~ li:last-child:before,
+#links ul li:hover:nth-child(odd):last-child:before {
+  animation-direction: reverse;
+}
+#links ul li {
+  text-align: center;
+  flex-grow: 1;
+  display: block;
+}
+#links ul li:hover {
+  z-index: 2;
+}
+#links ul li:hover img {
+  filter: drop-shadow(0 0 10px black);
+  -webkit-filter: drop-shadow(0 0 10px black);
+}
+#links ul li:hover:first-child img {
+  transform: translateX(12%) scale(1.25);
+}
+#links ul li:hover:last-child img {
+  transform: translateX(-12%) scale(1.25);
+}
+#links ul li:hover img {
+  transform: scale(1.5);
+}
+#links ul li img {
+  width: 100%;
+  align-self: center;
+  height: auto;
+  float: none;
+}
+/*# sourceMappingURL=links.css.map */

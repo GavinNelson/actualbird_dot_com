@@ -1,0 +1,47 @@
+#contact {
+    overflow: hidden;
+    textarea {
+        width: 50vh;
+        height: 40vh;
+        display: block;
+        margin: 0 auto;
+        color: #fff;
+        background-color: #000;
+        border: 1vh solid white;
+    }
+    .submit {
+        border: 1vh solid white;
+        border-radius: 0;
+        background-color: #000;
+        color: #fff;
+        width: 50vh;
+        height: 10vh;
+        display: block;
+        margin: 0 auto;
+        &:hover {
+            background-color: #fff;
+            color: #000;
+        }
+        &:active {
+            color: #fff;
+            text-shadow: 2px  0px black,
+                         2px  2px black,
+                         0px  2px black,
+                        -2px  2px black,
+                        -2px  0px black,
+                        -2px -2px black,
+                         0px -2px black,
+                         2px -2px black;
+            box-shadow: inset 0px 0px 0px 5px black,
+                        inset 0px 0px 0px 10px white,
+                        inset 0px 0px 0px 15px black,
+                        inset 0px 0px 0px 20px white,
+                        inset 0px 0px 0px 25px black,
+                        inset 0px 0px 0px 30px white,
+                        inset 0px 0px 0px 35px black,
+                        inset 0px 0px 0px 40px white,
+                        inset 0px 0px 0px 45px black,
+                        inset 0px 0px 0px 50px white;
+        }
+    }
+}

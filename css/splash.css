@@ -1,0 +1,13 @@
+section.splash {
+  overflow-y: hidden;
+  background-image: url('../img/backgrounds/sphere4.gif'), url('http://actualbird.com/images/abMonochromeLogo.png');
+  background-size: cover;
+  background-color: #fff;
+  cursor: pointer;
+}
+section.splash.front {
+  background-image: url('http://actualbird.com/images/abMonochromeLogo.png'), url('../img/backgrounds/sphere4.gif');
+  border-color: transparent;
+  background-color: transparent;
+}
+/*# sourceMappingURL=splash.css.map */

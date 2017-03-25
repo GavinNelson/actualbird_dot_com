@@ -1,0 +1,57 @@
+#bio {
+    background-size: cover;
+    padding: 0;
+    padding-top: 12vmin;
+    background-color: #000;
+    &:before {
+        transform-origin: 50% 18%;
+        content: '';
+        background-image: url('../img/backgrounds/concentric.png');
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        display: block;
+        left: -50%;
+        top: -18%;
+        transition: all 0.5s ease-out;
+        transform: scale(0.5);
+    }
+    &.front {
+        background-size: 0;
+        p,
+        table {
+            visibility: visible;
+        }
+        &:before {
+            transform: scale(1);
+            opacity: 0;
+            transition: all 1.5s ease;
+        }
+    }
+    p,
+    table {
+        visibility: hidden;
+    }
+    h1 {
+        font-size: 250%;
+        margin-top: 2vmin;
+    }
+    p {
+        text-align: justify;
+        font-size: 50%;
+        margin: 0;
+        padding: 0 12vmin;
+    }
+    table {
+        text-align: center;
+        font-size: 40%;
+        td:first-child {
+            text-align: right;
+        }
+        td:last-child {
+            text-align: left;
+        }
+    }
+}

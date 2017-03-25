@@ -1,0 +1,14 @@
+#notes {
+  padding: 20vmin;
+  font-size: 50%;
+  background-image: url('../img/backgrounds/sphere5grey.gif');
+  background-size: contain;
+}
+#notes ul {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+#notes > ul {
+  height: 50vmin;
+  overflow-y: scroll;
+}
+/*# sourceMappingURL=notes.css.map */

@@ -1,0 +1,152 @@
+.comingSoon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h1 {
+        position: relative;
+        flex: 1;
+    }
+}
+
+.push {
+    &:active {                
+        transform: scale(0.98);
+        transition: transform 0.02s ease-out;
+    }
+}
+
+.album {
+    .download & {
+        .downloadModal {
+            border-top: 1vh solid white;
+            transition: top 0.2s ease-out;
+            top: 30%;
+            .closeButton {
+                display: block;
+            }
+            a.downloadLink {
+                text-decoration: none;
+            }
+            label {
+                visibility: visible;
+            }
+        }
+        .info {
+            img,
+            .details {
+                transition: all 0.1s step-end;
+                filter:         blur(5px);
+                -webkit-filter: blur(5px);
+            }
+        }
+    }
+    .downloadModal {
+        padding-top: 1vh;
+        transition: top 0.1s ease-out;
+        position: absolute;
+        top: 80%;
+        height: 70%;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        text-align: center;
+        background-color: rgba(0,0,0,0.5);
+        .closeButton {
+            position: absolute;
+            top: 2vh;
+            right: 4vh;
+            display: none;
+            text-decoration: none;
+            width: 2em;
+            height: 2em;
+            .push;
+        }
+        input[type=radio] {
+            display: none;
+        }
+        form {
+            margin-top: 4vh;
+        }
+        form > div {
+            display: inline-block;
+        }
+        label {
+            display: inline-block;
+            width: 20vh;
+            height: 20vh;
+            border: 1vh dashed white;
+            line-height: 18vh;
+            border-radius: 50%;
+            cursor: pointer;
+            visibility: hidden;
+            background-color: black;
+            .push;
+        }
+        input[type=radio]:checked + label {
+            border-style: solid;
+        }
+        input[type=submit] {
+            display: block;
+            border: 1vh solid white;
+            cursor: pointer;
+            margin: 6vh auto;
+            background-color: black;
+            color: white;
+            background-image: none;
+            padding: 1vh;
+            font-family: inherit;
+            font-weight: bold;
+            .push;
+        }
+        input[type=submit]:hover {
+            background-color: white;
+            color: black;
+        }
+        a.downloadLink {
+            width: auto;
+            text-align: center;
+            font-size: 150%;
+        }
+        h3 {
+            text-align: center;
+            
+        }
+    }
+    h1 {
+        opacity: 1;
+        transition: opacity 1s step-end;
+        padding-top: 1em;
+    }
+    h2 {
+        margin: 0.5em 0 0.25em;
+    }
+    li {
+        cursor: pointer;
+    }
+    .playingSound {
+        position: relative;
+        left:  1em;
+    }
+    .details {
+        ol {
+            margin-top: 0;
+            padding-left: 2em;
+            box-sizing: border-box;
+        }
+        p {
+            padding-left: 1em;
+            text-align: justify;
+        }
+        font-size: 50%;
+        width: 50%;
+        float: left;
+    }
+    img.stretch {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 300;
+    }
+}

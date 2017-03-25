@@ -1,0 +1,37 @@
+//help stuff
+
+
+#help {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    color: #fff;
+    width: 1.3em;
+    line-height: 1.2em;
+    height: 1.3em;
+    border-radius: 50%;
+    border: 3px solid white;
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    &:hover {
+        color: black;
+        background-color: #fff;
+    }
+}
+#hell-p {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #000;
+    background-image: url("../img/helps/WESTON2.jpg");
+    background-size: cover;
+    background-position: center;
+    z-index:-50;
+}
+#help:active #hell-p{
+    display: block;
+}
