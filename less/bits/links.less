@@ -22,8 +22,8 @@
         -webkit-transform: rotate(360deg);
     }
 }
-@animation: spin 4s infinite linear both;
-@animation-slow: spin 4s infinite linear both reverse;
+@animation: spin 20s infinite linear both;
+@animation-slow: spin 20s infinite linear both reverse;
 
 @dashlength: 20;
 @keyframes dash {
@@ -95,7 +95,7 @@
         stroke-dasharray: @dashlength;
         stroke-linecap: round;
     }
-    
+
     &:hover {
         #twirlme,
         #twirlmebackwards {
@@ -114,15 +114,18 @@
         padding: 0;
         display: flex;
         flex-direction:row;
-        width: 100%;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
         align-items: center;
         justify-content: space-between;
         height: auto;
+        flex-wrap: wrap;
         li:last-child:before {
             transition: opacity 0.5s linear;
             content: '';
             background-color: #000;
-            background-image: url(../img/backgrounds/linksBG.png);
+            background-image: url(../img/backgrounds/linksBG_dark.png);
             background-size: cover;
             opacity: 0;
             position: absolute;
@@ -133,11 +136,11 @@
             z-index: 0;
             pointer-events: none;
             animation: @animation;
-            //animation-play-state: paused;
+            animation-play-state: paused;
         }
         li:hover ~ li:last-child:before,
         li:last-child:hover:before {
-            opacity: 0.5;
+            opacity: 0.95;
             animation-play-state: running;
         }
         li:hover:nth-child(odd) ~ li:last-child:before,
@@ -145,18 +148,22 @@
             animation-direction: reverse;
         }
         li {
+            max-width: 50%;
             text-align:center;
             &:hover {
                 img {
-                    filter: drop-shadow(0 0 10px black);
-                    -webkit-filter: drop-shadow(0 0 10px black);
+                    // @shadow-color: rgba(0,0,0,0.5);
+                    // background-color: @shadow-color;
+                    // box-shadow: 0 0 10vmin 5vmin @shadow-color;
                 }
                 z-index: 2;
-                &:first-child img {
-                    transform: translateX(12%) scale(1.25);
+                &:nth-child(2n+1) img {
+                    transform-origin: left;
+                    //transform: translateX(12%) scale(1.25);
                 }
-                &:last-child img {
-                    transform: translateX(-12%) scale(1.25);
+                &:nth-child(2n+0) img {
+                    transform-origin: right;
+                    //transform: translateX(-12%) scale(1.25);
                 }
                 img {
                     transform: scale(1.5);
@@ -169,7 +176,7 @@
                 align-self: center;
                 height: auto;
                 float: none;
-            } 
+            }
         }
     }
 }
