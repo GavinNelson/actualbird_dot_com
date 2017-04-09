@@ -9,7 +9,7 @@
 }
 
 .push {
-    &:active {                
+    &:active {
         transform: scale(0.98);
         transition: transform 0.02s ease-out;
     }
@@ -52,7 +52,7 @@
         text-align: center;
         background-color: rgba(0,0,0,0.5);
         .closeButton {
-            .push;
+            //.push;
             position: absolute;
             top: 2vmin;
             right: 6vmin;
@@ -69,7 +69,7 @@
             display: inline-block;
         }
         label {
-            .push;
+            //.push;
             display: inline-block;
             width: 20vmin;
             height: 20vmin;
@@ -84,7 +84,7 @@
             border-style: solid;
         }
         input[type=submit] {
-            .push;
+            //.push;
             display: block;
             border: 1vmin solid white;
             cursor: pointer;
@@ -107,7 +107,7 @@
         }
         h3 {
             text-align: center;
-            
+
         }
     }
     h1 {
@@ -125,7 +125,15 @@
         position: relative;
         left:  1em;
     }
+    .info > img {
+        width: 50%;
+        margin: 0 auto;
+        float: left;
+    }
     .details {
+        font-size: 50%;
+        width: 50%;
+        float: left;
         ol {
             margin-top: 0;
             padding-left: 2em;
@@ -135,9 +143,16 @@
             padding-left: 1em;
             text-align: justify;
         }
-        font-size: 50%;
-        width: 50%;
-        float: left;
+        ul.links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            padding-left: 2em;
+            img {
+                width: 50%;
+                display: inline-block;
+            }
+        }
     }
     img.stretch {
         width: 100%;
