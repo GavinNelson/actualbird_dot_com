@@ -2,7 +2,10 @@
 
 * put other videos in and make a switcher
 * package albums as zips in formats (maybe not, maybe just go to platforms)
+    platforms
+        get links in - done
 * try spotify player branch
+- put new album cover in
 * put new photos in
 * put new links in
   - iTunes - done

@@ -16,18 +16,21 @@
 }
 
 .album {
-    .download & {
-        .downloadModal {
+    .modalOpen & {
+        .streamBuyModal {
             border-top: 1vmin solid white;
             transition: top 0.2s ease-out;
             top: 28%;
             .closeButton {
                 display: block;
             }
-            a.downloadLink {
+            a.openModal {
                 text-decoration: none;
             }
             label {
+                visibility: visible;
+            }
+            ul.links {
                 visibility: visible;
             }
         }
@@ -40,7 +43,7 @@
             }
         }
     }
-    .downloadModal {
+    .streamBuyModal {
         padding-top: 1vmin;
         transition: top 0.1s ease-out;
         position: absolute;
@@ -59,48 +62,17 @@
             display: none;
             text-decoration: none;
         }
-        input[type=radio] {
-            display: none;
-        }
-        form {
-            margin-top: 4vmin;
-        }
-        form > div {
-            display: inline-block;
-        }
-        label {
-            //.push;
-            display: inline-block;
-            width: 20vmin;
-            height: 20vmin;
-            border: 1vmin dashed white;
-            line-height: 18vmin;
-            border-radius: 50%;
-            cursor: pointer;
+        ul.links {
             visibility: hidden;
-            background-color: black;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            img {
+                width: 50%;
+                display: inline-block;
+            }
         }
-        input[type=radio]:checked + label {
-            border-style: solid;
-        }
-        input[type=submit] {
-            //.push;
-            display: block;
-            border: 1vmin solid white;
-            cursor: pointer;
-            margin: 6vmin auto;
-            background-color: black;
-            color: white;
-            background-image: none;
-            padding: 1vmin;
-            font-family: inherit;
-            font-weight: bold;
-        }
-        input[type=submit]:hover {
-            background-color: white;
-            color: black;
-        }
-        a.downloadLink {
+        a.openModal {
             width: auto;
             text-align: center;
             font-size: 150%;
@@ -142,16 +114,6 @@
         p {
             padding-left: 1em;
             text-align: justify;
-        }
-        ul.links {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            padding-left: 2em;
-            img {
-                width: 50%;
-                display: inline-block;
-            }
         }
     }
     img.stretch {

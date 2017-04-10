@@ -302,7 +302,7 @@ $(document).ready(function () {
         $links.first().parent().addClass("chosen");
         spin();
     }
-    
+
     $links.click(function (e) {
         e.preventDefault();
         setTimeout(function(){window.scrollTo(0, 1);},0);
@@ -311,16 +311,16 @@ $(document).ready(function () {
         //this needs to figure out the section to rotate to
         //index = $(this).parent().index();
         var link = $(this).attr('href');
-        
+
         log($(this).text());
         gotoPage(link);
-        
+
     });
-    
+
     var n = 0;
     var url = lakes[n];
     $('#hell-p').css("background-image", "url(" + url + ")");
-    
+
     $('#help').click(function () {
         log("help");
         var url = lakes[n];
@@ -330,7 +330,7 @@ $(document).ready(function () {
             n  =  0;
         }
     });
-    
+
     $('.right,.splash').click(function () {
         goRight();
     });
@@ -373,32 +373,32 @@ $(document).ready(function () {
             $(this).addClass('playingSound');
         }
     });
-    
-    $('.downloadLink').click(function(e){
+
+    $('.openModal').click(function(e){
         e.preventDefault();
-        $(this).closest('section').addClass("download");
+        $(this).closest('section').addClass("modalOpen");
     });
     $('.closeButton').click(function(e){
         e.preventDefault();
-        $(this).closest('section').removeClass("download");
+        $(this).closest('section').removeClass("modalOpen");
     });
-    
+
     initializeGallery();
-    
+
     var media;
-    
+
     audio.addEventListener("timeupdate", function(){
         var right = (1 - (audio.currentTime/audio.duration)) * 100 + "%";
         $('#audio .progressbar-inner').css("right", right);
         media = audio;
     }, false);
-    
+
     video.addEventListener("timeupdate", function(){
         var right = (1 - (video.currentTime/video.duration)) * 100 + "%";
         $('#audio .progressbar-inner').css("right", right);
         media = video;
     }, false);
-    
+
     $('#pause').click(function(){
         pauseMedia(media);
     });
@@ -409,11 +409,11 @@ $(document).ready(function () {
         stopMedia();
         hidePlayer();
     });
-    
+
     $('.progressbar').click(function(click){
         //return as the serveer doesnt support this.
         //return;
-        
+
         var ex = click.pageX;
         //get ex as a percentage between left and right pos of progress bar
         var norm = ex - $(this).offset().left;
@@ -455,7 +455,7 @@ $(document).ready(function () {
                 $('.right').click();
                 break;
         }
-            
+
     });
     $('#contact textarea').keyup(function () {
         var len = $(this).val().length;
@@ -467,19 +467,12 @@ $(document).ready(function () {
     }).keydown(function(e) {
         e.stopPropagation();
     });
-    
+
     $('#contact form').submit(function(e) {
         e.preventDefault();
         //alert("OK BOB");
         $(this).addClass('submitted');
         //wait a second, then clear it and remove the class
-        
+
     });
 });
-
-
-
-
-
-
-
