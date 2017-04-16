@@ -159,6 +159,7 @@ function keepAngleInRange(angleToUse) { // 0 <= x < 360
 function spin() {
     log("spinning...");
     $('.front').removeClass("front");
+    $('.contain').addClass('spinning');
     $('div section').each(function () {
         $(this).css("-webkit-transform", "rotate(" + rot + "deg)");
         $(this).css("transform", "rotate(" + rot + "deg) translateY(-182%) rotate(-"+(rot+360)+"deg)");
@@ -179,6 +180,9 @@ function spin() {
         rot = rot + rotD;
         //rot = keepAngleInRange(rot);
     });
+    $('section.front').one('transitionend', function(){
+        $('.contain').removeClass('spinning');
+    })
 }
 
 function getRandomInt(min, max) {
@@ -302,7 +306,6 @@ $(document).ready(function () {
         $links.first().parent().addClass("chosen");
         spin();
     }
-
     $links.click(function (e) {
         e.preventDefault();
         setTimeout(function(){window.scrollTo(0, 1);},0);
