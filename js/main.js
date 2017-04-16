@@ -351,6 +351,45 @@ $(document).ready(function () {
         },
         threshold : 20
     });
+    //videos
+    $('#video .videolink').click(function(e){
+        e.preventDefault();
+        var videoplayer = document.getElementById('videoplayer');
+        videoplayer.src = $(this).data("source") + ".mp4";
+        videoplayer.play();
+        $('#video').addClass('playing');
+        videoplayer.addEventListener('ended', function() {
+            $('#video').removeClass('playing');
+        });
+    });
+    $('#video-close').click(function(){
+        var videoplayer = document.getElementById('videoplayer');
+        $('#video').removeClass('playing');
+        videoplayer.pause();
+    });
+    $('#fullscreen').click(function(){
+        var videoplayer = document.getElementById('videoplayer');
+        if(videoplayer.requestFullscreen) {
+            videoplayer.requestFullscreen();
+        } else if(videoplayer.mozRequestFullScreen) {
+            videoplayer.mozRequestFullScreen();
+        } else if(videoplayer.webkitRequestFullscreen) {
+            videoplayer.webkitRequestFullscreen();
+        } else if(videoplayer.msRequestFullscreen) {
+            videoplayer.msRequestFullscreen();
+        }
+    });
+    $('#videoplayer, #video-play-pause').click(function() {
+        var videoplayer = document.getElementById('videoplayer');
+        var $playpausebutton = $('#video-play-pause');
+        if (videoplayer.paused) {
+            $playpausebutton.removeClass('paused');
+            videoplayer.play();
+        } else {
+            $playpausebutton.addClass('paused');
+            videoplayer.pause();
+        }
+    });
     //choons
     $('.album li').click(function() {
         var src = $(this).data("source");
