@@ -63,4 +63,31 @@
                          2px -2px black;
         }
     }
+    .messages {
+        p {
+            display: none;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            margin: 0;
+            width: 100%;
+            left: 0;
+            text-align: center;
+            color: #000;
+            background-color: #fff;
+            pointer-events: none;
+            font-size: 120%;
+        }
+        .error {
+        }
+    }
+    &.sending .sending {
+        display: block;
+    }
+    &.success .success {
+        display: block;
+    }
+    &.error .error {
+        display: block;
+    }
 }

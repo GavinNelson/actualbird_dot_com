@@ -481,10 +481,31 @@ $(document).ready(function () {
         $('.audiominimize').show();
     });
     $('#contact textarea').focus(function(){
+        $('#contact').removeClass('sending success error')
         if ($(this).text() === "Enter your communication here...") {
             $(this).text("");
         }
     });
+    $('#contact form').submit(function(e){
+        e.preventDefault();
+        var m = $(this).serialize();
+        $('#contact').addClass('sending');
+        try {
+            $.ajax({
+                method: "POST",
+                url: $(this).attr('action'),
+                data: m,
+                success: function() {
+                    $('#contact').removeClass('sending error').addClass('success');
+                },
+                fail: function() {
+                    $('#contact').removeClass('sending success').addClass('error');
+                }
+            });
+        } catch(e) {
+            $('#contact').removeClass('sending success').addClass('error');
+        }
+    })
     $('section').on('focus', function(e){
         $('nav a').eq($(this).index()).click();
     });
