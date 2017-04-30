@@ -77,7 +77,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $to = 'gavin.nelson1@googlemail.com';
     $message = filter_var($_POST['message'], FILTER_SANITIZE_STRING);
     $subject = 'actualbird.com message';
-    $headers = 'From: actualbird.com';
+    $headers = 'From: info@actualbird.com' . "\r\n" .
+            'Reply-To: webmaster@example.com' . "\r\n" .
+            'X-Mailer: PHP/' . phpversion();
     if ($message != '' && mail($to, $subject, $message, $headers)) {
         success();
     } else {
