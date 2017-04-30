@@ -498,7 +498,7 @@ $(document).ready(function () {
                 success: function() {
                     $('#contact').removeClass('sending error').addClass('success');
                 },
-                fail: function() {
+                error: function() {
                     $('#contact').removeClass('sending success').addClass('error');
                 }
             });
