@@ -340,6 +340,16 @@ $(document).ready(function () {
     $('.left').click(function () {
         goLeft();
     });
+    $(window).keydown(function(e){
+        switch (e.which){
+            case 37:
+                $('.left').click();
+                break;
+            case 39:
+                $('.right').click();
+                break;
+        }
+    });
     $('.contain').swipe({
         swipe: function(event, direction, distance, duration, fingerCount, fingerData){
             console.log('swipe');
@@ -353,6 +363,14 @@ $(document).ready(function () {
             }
         },
         threshold : 20
+    });
+    $('section').focus(function(e){
+        $('nav a').eq($(this).index()).click();
+    });
+    $('section *').focus(function() {
+        if (!$(this).closest('section').hasClass('front')) {
+            $('nav a').eq($(this).closest('section').index()).click();
+        }
     });
     //videos
     $('#video .videolink').click(function(e){
@@ -506,20 +524,6 @@ $(document).ready(function () {
         } catch(e) {
             $('#contact').removeClass('sending success').addClass('error');
         }
-    })
-    $('section').on('focus', function(e){
-        $('nav a').eq($(this).index()).click();
-    });
-    $(window).keydown(function(e){
-        switch (e.which){
-            case 37:
-                $('.left').click();
-                break;
-            case 39:
-                $('.right').click();
-                break;
-        }
-
     });
     $('#contact textarea').keyup(function () {
         var len = $(this).val().length;
