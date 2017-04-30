@@ -360,6 +360,7 @@ $(document).ready(function () {
         var videoplayer = document.getElementById('videoplayer');
         videoplayer.src = $(this).data("source") + ".mp4";
         videoplayer.play();
+        $('#video-play-pause').removeClass('paused');
         $('#video').addClass('playing');
         videoplayer.addEventListener('ended', function() {
             $('#video').removeClass('playing');
