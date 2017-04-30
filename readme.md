@@ -1,5 +1,6 @@
 #todo
 - video
+    - make it somehow obvious it's videos
     - put other videos in and make a switcher
         -   the ending inn - done
         -   bone meadow
@@ -14,11 +15,12 @@
                 - if in fullscreen
 - put platform links in - done
 - put new album cover in - done
-- put new photos in
+- put new photos in - done
 - put new links in - done
      -  iTunes - done
      -  spotify - done
      -  google play music -- has us lumped in with actual birds and uses their album cover - could just link to the agreer - done
      -  make all svg - done
 - make someone write a new bio
-- make contact form work.
+- make contact form work - done
+- set contact form email address
