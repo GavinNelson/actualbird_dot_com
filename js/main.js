@@ -24,6 +24,7 @@ function stopMedia() {
         var vid = $video.get(0);
         if (vid.currentTime > 0 && !vid.paused && !vid.ended && vid.readyState > 2) {
             $video.get(0).pause();
+            $('#video-play-pause').addClass('paused');
         }
     }
 }
