@@ -16,6 +16,13 @@ function stopMedia() {
         $media.removeClass('playing');
         $('.playingSound').removeClass('playingSound');
     }
+    var $video = $('.videoPlaying video');
+    if ($video.length > 0) {
+        var vid = $video.get(0);
+        if (vid.currentTime > 0 && !vid.paused && !vid.ended && vid.readyState > 2) {
+            $video.get(0).pause();
+        }
+    }
 }
 
 function hidePlayer() {
@@ -375,18 +382,19 @@ $(document).ready(function () {
     //videos
     $('#video .videolink').click(function(e){
         e.preventDefault();
+        stopMedia();
         var videoplayer = document.getElementById('videoplayer');
         videoplayer.src = $(this).data("source") + ".mp4";
         videoplayer.play();
         $('#video-play-pause').removeClass('paused');
-        $('#video').addClass('playing');
+        $('#video').addClass('videoPlaying');
         videoplayer.addEventListener('ended', function() {
-            $('#video').removeClass('playing');
+            $('#video').removeClass('videoPlaying');
         });
     });
     $('#video-close').click(function(){
         var videoplayer = document.getElementById('videoplayer');
-        $('#video').removeClass('playing');
+        $('#video').removeClass('videoPlaying');
         videoplayer.pause();
     });
     $('#fullscreen').click(function(){
@@ -405,6 +413,7 @@ $(document).ready(function () {
         var videoplayer = document.getElementById('videoplayer');
         var $playpausebutton = $('#video-play-pause');
         if (videoplayer.paused) {
+            stopMedia();
             $playpausebutton.removeClass('paused');
             videoplayer.play();
         } else {
