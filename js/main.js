@@ -7,6 +7,7 @@ var lakes = [
 
 function stopMedia() {
     //unload audio and video
+    $('.playingSound').removeClass('playingSound');
     var $media = $('.playing');
     if ($media.length > 0) {
         var media = $media.get(0);
@@ -14,7 +15,9 @@ function stopMedia() {
         media.src = '';
         media.load();
         $media.removeClass('playing');
-        $('.playingSound').removeClass('playingSound');
+        //make player reflect status
+        $('#pause').hide();
+        $('#play').show();
     }
     var $video = $('.videoPlaying video');
     if ($video.length > 0) {
@@ -383,6 +386,7 @@ $(document).ready(function () {
     $('#video .videolink').click(function(e){
         e.preventDefault();
         stopMedia();
+        hidePlayer();
         var videoplayer = document.getElementById('videoplayer');
         videoplayer.src = $(this).data("source") + ".mp4";
         videoplayer.play();
@@ -414,6 +418,7 @@ $(document).ready(function () {
         var $playpausebutton = $('#video-play-pause');
         if (videoplayer.paused) {
             stopMedia();
+            hidePlayer();
             $playpausebutton.removeClass('paused');
             videoplayer.play();
         } else {
@@ -426,11 +431,9 @@ $(document).ready(function () {
         var src = $(this).data("source");
         var isVid = src.indexOf(".mp4") !== -1;
         if ($(this).hasClass("playingSound")) {
-            $('.playingSound').removeClass('playingSound');
             stopMedia();
             hidePlayer();
         } else {
-            $('.playingSound').removeClass('playingSound');
             stopMedia();
             if (isVid) {
                 var media = video;
