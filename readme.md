@@ -1,4 +1,5 @@
 # todo
+## before go
 - video
     - make it somehow obvious it's videos
     - put other videos in and make a switcher
@@ -11,3 +12,9 @@
 - make someone write a new bio
 - set contact form email address
 - make sure video doesnt overlap with album players - done
+
+## longterm
+
+- Make more background-videos
+- Make more visualiser layers
+- Make visualiser sequencable
