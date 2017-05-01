@@ -189,7 +189,7 @@ function spin() {
     });
     $('section.front').one('transitionend', function(){
         $('.contain').removeClass('spinning');
-    })
+    });
 }
 
 function getRandomInt(min, max) {
