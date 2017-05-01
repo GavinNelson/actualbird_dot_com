@@ -13,3 +13,4 @@
             - if in fullscreen
 - make someone write a new bio
 - set contact form email address
+- make sure video doesnt overlap with album players
