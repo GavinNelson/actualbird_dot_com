@@ -1,4 +1,4 @@
-#todo
+# todo
 - video
     - make it somehow obvious it's videos
     - put other videos in and make a switcher
@@ -8,8 +8,8 @@
     - make a gif for each to go in the background
     - put all on the youtubes vimeos etc.
     - hd toggle
-            - base it on screen size
-                - if screens wider than 1920 (with density factored in)
-                - if in fullscreen
+        - base it on screen size
+            - if screens wider than 1920 (with density factored in)
+            - if in fullscreen
 - make someone write a new bio
 - set contact form email address
