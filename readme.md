@@ -7,10 +7,7 @@
         -   the agreer
     - make a gif for each to go in the background
     - put all on the youtubes vimeos etc.
-    - hd toggle
-        - base it on screen size
-            - if screens wider than 1920 (with density factored in)
-            - if in fullscreen
+    - hd toggle - just use the 720p versions
 - make someone write a new bio
 - set contact form email address
-- make sure video doesnt overlap with album players
+- make sure video doesnt overlap with album players - done
